@@ -1,0 +1,33 @@
+.footer {
+	padding: 2.5rem 0;
+	background-color: #333;
+	margin-bottom: 0;
+	.contenedor-footer {
+		// padding-top:1.5rem;
+		.navegacion {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			grid-gap: 1rem;
+
+			@include media768{
+				display: flex;
+				flex-direction: row;
+				// justify-content: flex-start;
+				grid-gap: 2rem;
+			}
+			a {
+				@include tipografia2($tipo2, 2rem, $grisaceo, 500, .1rem);
+				&:hover {
+					color: $verde;
+				}
+			}
+		}
+	}
+	.copyright {
+		@include tipografia2($tipo1, 2rem, $grisaceo, 500, .08rem);
+		margin: 1rem auto 1.5rem 2rem;
+
+	}
+}

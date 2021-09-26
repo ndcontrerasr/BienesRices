@@ -1,0 +1,164 @@
+.header {
+	// background-color: $gris;
+	padding: 2rem 1rem 3rem;
+	background-color: $grisOscuro;
+	background-position: 50%;
+    background-size: cover;
+
+    .contenedor-header {
+    	display: flex;
+    	flex-direction: column;
+    	justify-content: space-between;
+    	// min-height: 40rem;
+
+    	// @include media850 {
+    	// 	min-height: 59rem;
+    	// }
+
+    	.barra {
+    		display: flex;
+			flex-direction: column;
+			align-items: center;
+    		
+    		@include media850{
+			    justify-content: space-between;
+			    flex-direction: row;
+    		}	
+
+    		.indice {
+    			display: flex;
+    			text-align: center;
+
+    			button {
+    				
+    				display: flex;
+    				align-items: center;
+    				background-color: transparent;
+    				border: none;
+    				margin: 0;
+    				margin-right: 1rem;
+					cursor: pointer;
+
+    				.icon {
+    					align-items: center;
+    					width: 4rem;
+    					color: $grisaceo;
+    					// height: 30rem;
+    					&:hover {
+    						color: $amarillo;
+    					}
+    				}
+    			}
+    		}
+
+    		.pagina {
+    			@include tipografia2($tipo1, 3.3rem, $grisaceo, 100, .2rem);
+    			span {
+    				@include tipografia2($tipo2, 3rem, $grisaceo, 900, .2rem);
+    			}
+    			&:hover {
+    				color: $amarillo;
+    				span {color: $amarillo;}
+    			}
+    		}
+
+    		.mobile-menu {
+    			display: grid;
+    			grid-gap: 2rem;
+
+				@include media850 {
+					grid-gap: 1rem;
+    			}
+    			@include media1000 {
+					grid-gap: 2rem;
+    			}
+    			button {
+    				margin: auto;
+    				display: block;
+    				background-color: transparent;
+    				
+    				border-width: 5px;
+    				// border-top-color: ;
+					border-right-color: $oscuro;
+					border-bottom-color: $oscuro;
+
+					border-radius: 1rem;
+					border-left-color: #CCC;
+					// cursor: hand;
+					cursor: pointer;
+
+					@include media850 {
+    					grid-column: 2/3;
+    				}
+
+					&:hover {
+						-webkit-animation: tiembla 0.1s infinite;
+					}
+					@-webkit-keyframes tiembla {
+						0%  { -webkit-transform:rotateZ(-5deg); }
+						50% { -webkit-transform:rotateZ( 0deg) scale(1); }
+						100%{ -webkit-transform:rotateZ( 5deg); }
+					}
+
+    				.icon {
+    					width: 30px; 
+    					height: 30px;
+    					color: $grisaceo;
+    				}
+    			}
+
+    			.derecha {
+    				display: flex;
+    				align-items: center;
+    				padding: .6rem;
+    				border-radius: 5rem;
+    				background-color: $grisclaro;
+					border: $grisOscuro 3px solid;
+
+    				@include media850{
+	    				grid-row: 1/2;
+	    				grid-column: 1/2;
+    				}
+					
+					.navegacion {
+						display: flex;
+						flex-direction: column;
+						margin: 1.5rem 2rem;
+						grid-gap: 1.5rem;
+
+    					@include media850{
+    						margin: 0 1rem;
+    						flex-direction: row;
+    						grid-gap: 1rem;
+    					}
+
+    					a {
+    						@include tipografia2($tipo2, 2rem, $grisaceo, 500, .1rem);
+    						&:hover {
+    							color: $verde;
+    						}
+    					}
+					}				
+    			}
+    			.no-visible {
+    				display: none;
+    			}
+    		}
+    	}
+    	.sub-titulo {
+    		@include tipografia2($tipo2, 3rem, $grisaceo, 500, .3rem);
+    		margin-bottom: 0;
+    		display: flex;
+    		flex-direction: column;
+    	}
+    }
+}
+.inicio {
+	background-image: url('../img/header.jpg');
+	.contenedor-header {
+    	min-height: 40rem;
+    	@include media850 {
+    		min-height: 59rem;
+    	}
+    }
+}

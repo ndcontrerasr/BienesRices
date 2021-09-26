@@ -1,0 +1,103 @@
+.seccion-inferior {
+	display: grid;
+
+	@include media768 {
+		grid-template-columns: auto 35rem;
+		grid-gap: 2rem;
+	}
+
+	.blog, .testimoniales {
+		// grid-gap: 2rem;
+		h3 {
+			@include tipografia2($tipo1, 3rem, $oscuro, 400, .1rem);
+		}
+	}
+	.testimonial {
+		background-color: #71b100;
+		padding: 2rem;
+		// margin: 0;
+		// color: $grisaceo;
+		border-radius: 2rem;
+		@include tipografia2($tipo3, 2.2rem, $grisaceo, 400, .08rem);
+		blockquote {
+			margin: 0;
+		}
+
+	}
+}
+.ver-blog {
+	display: grid;
+	grid-gap: 2rem;
+	max-width: 70rem;
+	@include media1010 {
+		max-width: 100rem;
+	}
+	.titulo {
+		margin-bottom: 0;
+	}
+	.entrada-blog {
+		@include media1010 {
+			grid-template-columns: 1fr 2fr;
+		}
+	}
+}
+.entrada-blog {
+	display: grid;
+
+	@include media550 {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 2rem;
+	}
+	@include media768 {
+		grid-template-columns: repeat(1, 1fr);
+		grid-gap: 0;
+	}
+	@include media1010 {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 2rem;
+	}
+	.texto-entrada {
+		h4 {
+			@include tipografia2($tipo2, 3rem, $oscuro, 600, .12rem);
+			margin-top: 1rem;
+			margin-bottom:0;
+			&:after {
+				content: "";
+				display: block;
+				width: auto;
+				height: .5rem;
+				background-color: #71b100;
+				margin-top: 1rem;
+			}
+		}
+		.informacion-meta {
+			@include tipografia2($tipo3, 2.4rem, $oscuro, 400, .07rem);
+			span {
+				color: #e08709;
+			}
+		}
+		p {
+			@include tipografia2($tipo3, 2.2rem, $oscuro, 400, .08rem);
+		}
+	}
+}
+
+.dark-mode {
+	.blog, .testimoniales, .entrada-blog {
+		h3 {
+			color: $grisaceo;
+		}
+		.texto-entrada { 
+			h4 {
+				color: $grisaceo;
+			}
+			.informacion-meta {
+				color: $grisaceo;
+			}
+			p {
+				color: $grisaceo;
+			}
+		}
+	}
+	
+}

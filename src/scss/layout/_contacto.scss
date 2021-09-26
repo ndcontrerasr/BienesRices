@@ -1,0 +1,35 @@
+.imagen-contacto {
+    
+    background-image: url('../img/encuentra.webp');
+
+    background-position: 50%;
+    background-size: cover;
+    padding: 10rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+	h2 {
+		@include tipografia2($tipo1, 2.8rem, white, 100, .2rem);
+	}
+	p {
+		@include tipografia2($tipo2, 2.2rem, white, 100, .12rem);
+		text-align: center;
+		margin: auto 10%;
+	}
+	a {
+		@include tipografia2($tipo1, 2rem, white, 700, .1rem);
+		background-color: #e08709;
+	    color: white;
+	    text-decoration: none;
+	    padding: 1rem 3rem;
+	    text-align: center;
+	    margin-top: 2.5rem;
+	    display: inline-block;
+	    border: none;
+
+	    &:hover {
+			background-color: #BC6E01;
+	    }
+	}
+}
